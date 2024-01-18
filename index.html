@@ -1,96 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full Stack Developer Portfolio</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-</head>
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">MXCODED</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+<html lang="{{ site.lang | default: "en-US" }}">
 
-  <section id="hero" class="jumbotron text-center">
-    <div class="container">
-      <img class="rounded" src="https://avatars.githubusercontent.com/u/97896663?v=4" alt="MyPhoto">
-      <h1 class="display-4">Oluwasheyi Makanjuola</h1>
-      <h2 class="lead">Full Stack Developer</h2>
-      <a href="#contact" class="btn btn-primary btn-lg">Hire Me</a>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+{% seo %}
+    {% include head-custom.html %}
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          {% if site.github.is_project_page %}
+            <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
+          {% endif %}
+
+          <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
+          <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+
+          {% if site.show_downloads %}
+            <section id="downloads">
+              <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
+            </section>
+          {% endif %}
+        </header>
     </div>
-  </section>
 
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">About Me</h2>
-      <p>
-        Hi, I'm Oluwasheyi, a passionate Full Stack Developer with experience in building web applications. I have a strong foundation in front-end and back-end technologies, including HTML, CSS, JavaScript, Node.js, Php, C, and databases like MySQL and MongoDB.
-      </p>
-      <p>
-        I love solving problems and creating efficient, scalable solutions. I'm a quick learner and enjoy keeping up with the latest trends in web development. My goal is to deliver high-quality software that meets the client's requirements and provides a great user experience.
-      </p>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        {{ content }}
+      </section>
     </div>
-  </section>
 
-  <section id="projects" class="bg-light py-5">
-    <div class="container">
-      <h2 class="mb-4">Projects</h2>
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Portfolio Website</h3>
-              <p class="card-text">Just Like this one.</p>
-              <a href="#" class="btn btn-primary">View Project</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Hotel ERP</h3>
-              <p class="card-text">Coming Soon.</p>
-              <a href="#" class="btn btn-primary">View Project</a>
-            </div>
-          </div>
-        </div>
-        <!-- Add more project sections as needed -->
-      </div>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        {% if site.github.is_project_page %}
+        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
     </div>
-  </section>
-
-  <section id="contact" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">Contact Me</h2>
-      <p>If you have any questions or would like to discuss a potential project, feel free to get in touch with me. I'm available for freelance work and open to new opportunities.</p>
-      <a href="mailto:jaywoncoded@gmail.com" class="btn btn-primary">Email Me</a>
-    </div>
-  </section>
-
-  <footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2023 Oluwasheyi. All rights reserved.</p>
-  </footer>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
