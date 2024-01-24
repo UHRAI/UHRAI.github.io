@@ -49,6 +49,10 @@ Specify guidelines for contributing to your project, if applicable.
 
 List any related projects or technologies that influenced your work.
 
+## LinkedIn Project Link
+
+Check out the detailed project post on LinkedIn: [Maze Project on LinkedIn](https://www.linkedin.com/pulse/maze-yory-qu-hkdve)
+
 ## Licensing
 
 Specify the licensing information for your project.
